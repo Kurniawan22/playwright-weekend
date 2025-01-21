@@ -19,11 +19,17 @@ jobs:
         with:
           node-version: 18
 
+      - name: Install system dependencies for Playwright
+        run: sudo npx playwright install-deps
+
       - name: Install dependencies
         run: npm install
 
-      - name: Install Playwright browsers
-        run: npx playwright install
+      - name: Clear Playwright cache
+        run: npx playwright install-deps
 
-      - name: Run specific Playwright test
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+
+      - name: Run Playwright tests
         run: npx playwright test locator.spec.js

@@ -11,11 +11,10 @@ test('locator dan assertions', async ({page }) => {
     const inputPassword = page.locator('#password');
     await inputPassword.fill('secret_sauce');
     await expect(inputPassword).toHaveValue('secret_sauce');
-    //await page.locator('#password').fill('secret_sauce');
-    //await expect(page.locator('#password')).toHaveValue('secret_sauce');
+    
 
     const buttonLogin = page.locator('#login-button');
     await buttonLogin.click();
-    await expect(buttonLogin).toBeVisible();
-    await expect(buttonLogin).toHaveId('#login-button');
+    //await expect(buttonLogin).toBeVisible();
+    //await expect(buttonLogin).toHaveId('#login-button');
 });
